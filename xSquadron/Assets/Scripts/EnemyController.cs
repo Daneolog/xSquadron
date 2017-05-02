@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 	public ParticleSystem explosion;
+	public GameObject bullet;
 	public float speed;
+	public int shootRate;
 	private Transform player;
 	private int health;
+
+	void fire() {
+		Vector3 position = transform.position;
+		Quaternion rotation = transform.rotation;
+
+		var bulletObject = (GameObject)Instantiate (bullet, position, rotation);
+		bulletObject.GetComponent<Rigidbody> ().velocity = bulletObject.transform.forward * 100;
+
+		Destroy (bulletObject, 2.0f);
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +26,8 @@ public class EnemyController : MonoBehaviour {
 
 		health = 100;
 		speed /= 10;
+
+		InvokeRepeating ("fire", shootRate, shootRate);
 	}
 	
 	// Update is called once per frame
@@ -32,7 +46,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag ("Bullet")) {
+		if (other.CompareTag ("Player Bullet")) {
 			Instantiate (explosion, other.transform.position, other.transform.rotation);
 			health -= 50;
 			Destroy (other.gameObject);

@@ -26,7 +26,7 @@ public class StationController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag ("Bullet")) {
+		if (other.CompareTag ("Player Bullet")) {
 			Instantiate (explosion, other.transform.position, other.transform.rotation);
 			health -= 50;
 			Destroy (other.gameObject);

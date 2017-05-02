@@ -7,15 +7,18 @@ public class SquadronController : MonoBehaviour {
 	public ParticleSystem explosion;
 	public ParticleSystem thrusters;
 	public float speed;
+	private float health;
 
 	// Use this for initialization
 	void Start () {
+		health = 50;
 		speed /= 10;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (health <= 0)
+			Destroy (gameObject);
 	}
 
 	void FixedUpdate () {
@@ -42,10 +45,24 @@ public class SquadronController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (!other.CompareTag ("Bullet") && !other.CompareTag("Squadron Member")) {
+		switch (other.tag) {
+		case "Enemy Bullet":
+			health -= 10;
+			break;
+		case "Asteroid":
+			health -= 20;
+			break;
+		case "Enemy":
+			health -= 50;
+			break;
+		case "Station":
+			health -= 90;
+			break;
+		}
+
+		if (!other.CompareTag ("Player Bullet") && !other.CompareTag("Squadron Member")) {
 			Instantiate (explosion, other.transform.position, other.transform.rotation);
 			Destroy (other.gameObject);
-			Destroy (gameObject);
 		}
 	}
 }
