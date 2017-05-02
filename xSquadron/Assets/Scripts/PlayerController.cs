@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour {
 	#region gameplay functions
 	void fire(Vector3 position, int gun) {
 		Quaternion rotation = transform.rotation;
+		Vector3 eulerAngles = rotation.eulerAngles;
+		eulerAngles.x = 0;
+		rotation = Quaternion.Euler (eulerAngles);
 
 		if (gun == 1) { // normal bullet
 			var bulletObject = (GameObject)Instantiate (bullet, position, rotation);
@@ -125,20 +128,15 @@ public class PlayerController : MonoBehaviour {
 		case "Enemy Bullet":
 			health -= 10;
 			break;
-		case "Asteroid":
-			health -= 20;
-			break;
-		case "Enemy":
-			health -= 50;
-			break;
-		case "Station":
-			health -= 90;
+		case "Asteroid": case "Enemy": case "Station":
+			health -= 100;
 			break;
 		}
 
-		if (!other.CompareTag ("Player Bullet") && !other.CompareTag("Squadron Member")) {
+		if (!other.CompareTag ("Player Bullet") && !other.CompareTag("Squadron Member"))
 			Instantiate (explosion, other.transform.position, other.transform.rotation);
+
+		if (other.CompareTag ("Asteroid"))
 			Destroy (other.gameObject);
-		}
 	}
 }

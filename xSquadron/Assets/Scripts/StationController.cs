@@ -26,10 +26,11 @@ public class StationController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag ("Player Bullet")) {
-			Instantiate (explosion, other.transform.position, other.transform.rotation);
+		switch (other.tag) {
+		case "Player Bullet":
 			health -= 50;
-			Destroy (other.gameObject);
+			Instantiate (explosion, other.transform.position, other.transform.rotation);
+			break;
 		}
 	}
 }

@@ -46,10 +46,25 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag ("Player Bullet")) {
-			Instantiate (explosion, other.transform.position, other.transform.rotation);
+		switch (other.tag) {
+		case "Player Bullet":
 			health -= 50;
-			Destroy (other.gameObject);
+			break;
+		case "Asteroid": case "Player": case "Squadron Member":
+			health -= 100;
+			break;
 		}
+
+//		switch (other.tag) {
+//		case "Player Bullet": case "Asteroid": case "Player": case "Squadron Member":
+//			Instantiate (explosion, other.transform.position, other.transform.rotation);
+//			break;
+//		}
+
+		if (!other.CompareTag ("Enemy Bullet") && !other.CompareTag("Station"))
+			Instantiate (explosion, other.transform.position, other.transform.rotation);
+
+		if (other.CompareTag ("Asteroid"))
+			Destroy (other.gameObject);
 	}
 }
