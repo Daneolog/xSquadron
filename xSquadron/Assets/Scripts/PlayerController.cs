@@ -83,14 +83,6 @@ public class PlayerController : MonoBehaviour {
 
 		// display health
 		healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)health / 100, Time.deltaTime);
-
-		// failure
-		if (health <= 0) {
-			Destroy (gameObject);
-			SceneManager.LoadScene ("Failure");
-		} else if (GameObject.FindGameObjectsWithTag ("Station").Length == 0) {
-			SceneManager.LoadScene ("Success");
-		}
 	}
 
 	void FixedUpdate () {
