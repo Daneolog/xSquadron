@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 4992
+  controlID: 33
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 4993
+  controlID: 107
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -340,14 +340,14 @@ MonoBehaviour:
     width: 713
     height: 646
   m_SceneLighting: 1
-  lastFramingTime: 15116.83972241225
+  lastFramingTime: 193.5369059420044
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4, y: 1.6, z: -10}
+    m_Target: {x: 6.0970573, y: 1.5204356, z: -0.057225112}
     speed: 2
-    m_Value: {x: -4, y: 1.6, z: -10}
+    m_Value: {x: 6.0970573, y: 1.5204356, z: -0.057225112}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -370,13 +370,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.1730675, y: 0.025112746, z: -0.004414734, w: 0.9845817}
+    m_Target: {x: 0.23274572, y: -0.12793778, z: 0.030901795, w: 0.96359247}
     speed: 2
-    m_Value: {x: 0.17306718, y: 0.025112702, z: -0.004414726, w: 0.9845799}
+    m_Value: {x: 0.23274525, y: -0.12793753, z: 0.030901732, w: 0.9635905}
   m_Size:
-    m_Target: 486.5881
+    m_Target: 6.4840183
     speed: 2
-    m_Value: 486.5881
+    m_Value: 6.4840183
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -441,9 +441,9 @@ MonoBehaviour:
     height: 303
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 64250000
     m_LastClickedID: 0
-    m_ExpandedIDs: 66b1fdff9cbffdffdcc1fdfffcc6fdff6ec8fdff80dbfdff30defdffecdefdff1cfcfdff4a39feff5c39feff843afeffe060feffde77feff48f3feff98fbfeff9afbfeffcc1fffff6226ffff2027ffffe028ffff2845ffffc045ffff2c4affff2e4affff9e4bffffe84cffff904dffff2669ffff0688ffff1688ffffc688ffff588affff068effffb4a2ffffeea6ffff40b1ffff8eb3ffffc0c3ffff9ec7fffff8ebffff98f9ffff00000000b42e0000da2e0000e4330000fc3300005e340000763600008e360000103900003e390000ba3900001a4000003a400000644000007c400000e8400000084100004e50000010510000406300006c630000
+    m_ExpandedIDs: defbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,19 +503,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/UI Assets/Textures and Sprites/Lit UI
   m_ViewMode: 1
   m_StartGridSize: 81
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/UI Assets/Textures and Sprites/Lit UI
   m_LastFoldersGridSize: 81
   m_LastProjectPath: C:\Users\Daneolog\Documents\GitHub\xSquadron\xSquadron
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae290000
-    m_LastClickedID: 10670
-    m_ExpandedIDs: 000000004a290000aa290000d02a0000de2a00006a2b0000ea2b0000362e0000382e00003a2e00003c2e00003e2e0000402e0000422e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 143}
+    m_SelectedIDs: aa270000
+    m_LastClickedID: 10154
+    m_ExpandedIDs: 0000000038250000a0250000f82600000a27000030270000ac27000042280000f82a0000fa2a0000fc2a0000fe2a0000002b0000022b0000042b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -543,7 +543,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004a290000aa290000d02a00006a2b0000ea2b0000362e0000382e00003a2e00003c2e00003e2e0000402e0000422e000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000038250000a0250000f82600000a270000ac27000042280000f82a0000fa2a0000fc2a0000fe2a0000002b0000022b0000042b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -595,7 +595,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 16}
+    m_ScrollPosition: {x: 0, y: 363}
     m_GridSize: 81
   m_DirectoriesAreaWidth: 163
 --- !u!114 &16
