@@ -83,6 +83,12 @@ public class PlayerController : MonoBehaviour {
 
 		// display health
 		healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, (float)health / 100, Time.deltaTime);
+
+		// failure
+		if (health <= 0) {
+			Destroy (gameObject);
+			SceneManager.LoadScene ("Level 1 Failure");
+		}
 	}
 
 	void FixedUpdate () {
