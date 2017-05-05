@@ -54,7 +54,7 @@ public class SquadronController : MonoBehaviour {
 			break;
 		}
 
-		if (!other.CompareTag ("Player Bullet") && !other.CompareTag("Squadron Member"))
+		if (!other.CompareTag("Player") && !other.CompareTag ("Player Bullet") && !other.CompareTag("Squadron Member"))
 			Instantiate (explosion, other.transform.position, other.transform.rotation);
 
 		if (other.CompareTag ("Asteroid"))

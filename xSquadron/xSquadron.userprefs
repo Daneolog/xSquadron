@@ -1,23 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< Updated upstream
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraController.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="85" Column="96" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
-    <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="52" Column="16" />
-      <File FileName="Assets/Scripts/StationController.cs" Line="9" Column="23" />
-      <File FileName="Assets/Scripts/SquadronController.cs" Line="58" Column="80" />
-      <File FileName="Assets/Scripts/EnemyController.cs" Line="65" Column="80" />
->>>>>>> Stashed changes
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraController.cs" Line="22" Column="62" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Daneolog\Documents\GitHub\xSquadron\xSquadron\Assets\Scripts\StartScript.cs" line="8" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

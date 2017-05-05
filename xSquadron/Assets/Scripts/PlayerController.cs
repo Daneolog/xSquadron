@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-	public ParticleSystem thrusters;
+	public int level;
+	public ParticleSystem thruster;
 	public ParticleSystem explosion;
 	public GameObject bullet;
 	public GameObject squadron1;
 	public GameObject squadron2;
+	public AudioSource shots;
+	public AudioSource thrusters;
 	public Image healthBar;
 	public float speed;
 	public int spread;
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour {
 		} else if (gun == 3) { // homing rockets
 
 		}
+
+		shots.Play ();
 	}
 	#endregion
 
@@ -87,7 +92,7 @@ public class PlayerController : MonoBehaviour {
 		// failure
 		if (health <= 0) {
 			Destroy (gameObject);
-			SceneManager.LoadScene ("Level 1 Failure");
+			SceneManager.LoadScene ("Level " + level + " Failure");
 		}
 	}
 
@@ -97,10 +102,12 @@ public class PlayerController : MonoBehaviour {
 
 		// create thruster particles
 		if (vertical > 0) {
-			if (!thrusters.isPlaying)
-				thrusters.Play ();
-		} else if (thrusters.isPlaying)
-				thrusters.Stop ();
+			if (!thruster.isPlaying)
+				thruster.Play ();
+
+			thrusters.Play ();
+		} else if (thruster.isPlaying)
+				thruster.Stop ();
 
 		// change rotation
 		transform.Rotate(new Vector3(0, horizontal, 0));
