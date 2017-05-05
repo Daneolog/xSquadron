@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 	public GameObject player;
-	public float damping;
 	private Vector3 offset;
 
 	// Use this for initialization

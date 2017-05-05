@@ -5,19 +5,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
+	// level number
 	public int level;
+
+	// objects
 	public ParticleSystem thruster;
 	public ParticleSystem explosion;
 	public GameObject bullet;
-	public GameObject squadron1;
-	public GameObject squadron2;
+	public GameObject squadron1, squadron2, squadron3;
 	public AudioSource shots;
 	public AudioSource thrusters;
 	public Image healthBar;
+
+	// constants
 	public float speed;
+	public int reload;
 	public int spread;
 	public int health;
 	private int gunState;
+
+	// other variables
+	private int currentReload;
 
 	#region gameplay functions
 	void fire(Vector3 position, int gun) {
@@ -69,21 +77,21 @@ public class PlayerController : MonoBehaviour {
 		temp.y = transform.position.y;
 		squadron2.transform.position = temp;
 
-		// change guns
+		// change squadron 3 position
+		temp = squadron3.transform.position;
+		temp.y = transform.position.y;
+		squadron3.transform.position = temp;
+
+		// change gun
 		if (Input.GetKeyDown (KeyCode.Alpha1))
 			gunState = 1;
 		else if (Input.GetKeyDown (KeyCode.Alpha2))
 			gunState = 2;
 
 		// shoot gun
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			fire (GameObject.Find("gun").transform.position, gunState);
-
-			if (GameObject.Find("gun1") != null)
-				fire (GameObject.Find("gun1").transform.position, 1);
-
-			if (GameObject.Find("gun2") != null)
-				fire (GameObject.Find("gun2").transform.position, 1);
+		if (Input.GetKey (KeyCode.Space) && currentReload >= reload) {
+			currentReload = 0;
+			fire (transform.Find ("gun").transform.position, gunState);
 		}
 
 		// display health
@@ -94,6 +102,9 @@ public class PlayerController : MonoBehaviour {
 			Destroy (gameObject);
 			SceneManager.LoadScene ("Level " + level + " Failure");
 		}
+
+		if (currentReload < reload)
+			currentReload++;
 	}
 
 	void FixedUpdate () {
@@ -124,7 +135,7 @@ public class PlayerController : MonoBehaviour {
 
 		// reset transform position
 		Vector3 temp = transform.position;
-		temp.y = 1.6f;
+		temp.y = 0;
 		transform.position = temp;
 	}
 

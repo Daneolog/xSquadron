@@ -18,6 +18,10 @@ public class LevelChecker : MonoBehaviour {
 			if (GameObject.FindGameObjectsWithTag ("Station").Length == 0)
 				SceneManager.LoadScene ("Level 1 Success");
 			break;
+		case 2:
+			if (GameObject.FindGameObjectsWithTag ("Enemy").Length == 0)
+				SceneManager.LoadScene ("Level 2 Success");
+			break;
 		}
 	}
 }
